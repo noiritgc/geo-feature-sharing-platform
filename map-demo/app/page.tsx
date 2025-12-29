@@ -162,7 +162,7 @@ export default function Home() {
         selectedArea={selectedArea}
       />
 
-      {/* ================= PANEL ================= */}
+      {/* ================= LEFT PANEL ================= */}
       <div className={styles.leftPanel}>
 
         {!user ? (
@@ -176,7 +176,50 @@ export default function Home() {
           </div>
         )}
 
-        {/* BUCKET */}
+        {/* FRIENDS */}
+        <div style={{marginTop:20}}>
+
+          {user&&(
+          <div style={{cursor:'pointer',fontWeight:600}} onClick={()=>{
+            setFriendsOpen(!friendsOpen);
+            if(!friendsOpen) fetchFriends();
+          }}>
+            Friends ▾
+          </div>
+          )}
+
+          {friendsOpen && user && (
+            <div style={{marginTop:6}}>
+              <div style={{marginBottom:8,fontWeight:500}}>
+                Your ID: <strong>{user.uid}</strong>
+              </div>
+
+              <input value={newFriendId} placeholder="Enter friend UID"
+                onChange={e=>setNewFriendId(e.target.value)}
+                style={{width:'100%',marginBottom:6}}/>
+              <button onClick={addFriend}>Add Friend</button>
+
+              <div style={{marginTop:10,fontWeight:500}}>Your Friends:</div>
+              {friends.length===0 && <div>No friends yet</div>}
+
+              {friends.map(f=>(
+                <div key={f.uid} style={{padding:4,display:'flex',justifyContent:'space-between'}}>
+                  <span>{f.name}</span>
+                  <span style={{cursor:'pointer',color:'blue'}} onClick={()=>copyUid(f.uid)}>
+                    Copy UID
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+      </div>
+
+      {/* RIGHT PANEL */}
+      {user &&(
+      <div className={styles.rightPanel}>
+          {/* BUCKET */}
         <div style={{marginBottom:16}}>
           <div style={{cursor:'pointer',fontWeight:600}} onClick={()=>setBucketOpen(!bucketOpen)}>
             My Bucket ▾
@@ -239,42 +282,8 @@ export default function Home() {
           )}
         </div>
 
-        {/* FRIENDS */}
-        <div style={{marginTop:20}}>
-          <div style={{cursor:'pointer',fontWeight:600}} onClick={()=>{
-            setFriendsOpen(!friendsOpen);
-            if(!friendsOpen) fetchFriends();
-          }}>
-            Friends ▾
-          </div>
-
-          {friendsOpen && user && (
-            <div style={{marginTop:6}}>
-              <div style={{marginBottom:8,fontWeight:500}}>
-                Your ID: <strong>{user.uid}</strong>
-              </div>
-
-              <input value={newFriendId} placeholder="Enter friend UID"
-                onChange={e=>setNewFriendId(e.target.value)}
-                style={{width:'100%',marginBottom:6}}/>
-              <button onClick={addFriend}>Add Friend</button>
-
-              <div style={{marginTop:10,fontWeight:500}}>Your Friends:</div>
-              {friends.length===0 && <div>No friends yet</div>}
-
-              {friends.map(f=>(
-                <div key={f.uid} style={{padding:4,display:'flex',justifyContent:'space-between'}}>
-                  <span>{f.name}</span>
-                  <span style={{cursor:'pointer',color:'blue'}} onClick={()=>copyUid(f.uid)}>
-                    Copy UID
-                  </span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
       </div>
+      )}
 
       {/* GROUP PANEL */}
       {groupPanelOpen && activeGroup && (
