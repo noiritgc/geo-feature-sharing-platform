@@ -45,4 +45,372 @@
   margin-top: auto;
   font-weight: bold;
 }
+/* ================= AUTH SECTION ================= */
+
+.authContainer {
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 220px;
+}
+
+/* Sign In Button */
+.authSignInButton {
+  background: #4285F4;        /* Google blue */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+/* hover and click feedback */
+.authSignInButton:hover {
+  background: #3576db;
+  transform: translateY(-1px);
+}
+
+.authSignInButton:active {
+  transform: translateY(0);
+  opacity: 0.95;
+}
+
+/* Log Out button (separate style on purpose) */
+.authLogoutButton {
+  background: #e74c3c;       /* red */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.authLogoutButton:hover {
+  background: #c0392b;
+  transform: translateY(-1px);
+}
+
+.authLogoutButton:active {
+  transform: translateY(0);
+  opacity: 0.95;
+}
+
+.authUserLabel {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ================= FRIENDS SECTION ================= */
+
+.friendsSection {
+  margin-top: 20px;
+}
+
+.friendsToggle {
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  padding: 6px 0;
+  transition: color 0.15s;
+}
+
+.friendsToggle:hover {
+  color: #0070f3;
+}
+
+.friendsPanel {
+  background: #ffffff;
+  margin-top: 8px;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 240px;
+}
+
+/* User ID row */
+.friendUidRow {
+  font-size: 13px;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+/* Input style */
+.friendInput {
+  width: 100%;
+  padding: 8px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  transition: border 0.15s ease;
+}
+
+.friendInput:focus {
+  outline: none;
+  border-color: #0070f3;
+}
+
+/* Add friend button */
+.friendAddButton {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.friendAddButton:hover {
+  background: #218838;
+  transform: translateY(-1px);
+}
+
+.friendAddButton:active {
+  transform: translateY(0);
+  opacity: 0.95;
+}
+
+/* List Formatting */
+.friendListTitle {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.friendListItem {
+  padding: 6px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  border-bottom: 1px solid #efefef;
+}
+
+.friendCopyButton {
+  color: #0070f3;
+  cursor: pointer;
+  font-size: 13px;
+  transition: opacity 0.15s;
+}
+
+.friendCopyButton:hover {
+  opacity: 0.7;
+}
+
+/* ================= BUCKET SECTION ================= */
+
+.bucketSection {
+  margin-bottom: 18px;
+}
+
+.bucketToggle {
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 0;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.bucketToggle:hover {
+  color: #0070f3;
+}
+
+.bucketPanel {
+  background: #ffffff;
+  margin-top: 8px;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 240px;
+}
+
+/* Search input */
+.bucketSearchInput {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  font-size: 13px;
+  transition: border 0.15s ease;
+}
+
+.bucketSearchInput:focus {
+  outline: none;
+  border-color: #0070f3;
+}
+
+/* Add item */
+.bucketAddButton {
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  color: #0070f3;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.bucketAddButton:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+/* List items */
+.bucketItem {
+  padding: 6px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #efefef;
+  transition: background 0.12s;
+}
+
+.bucketItem:hover {
+  background: #f7f9ff;
+}
+/* ========== GROUPS STYLING ========== */
+
+.groupsSection {
+  margin-bottom: 18px;
+}
+
+/* clickable header */
+.groupsHeader {
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+  margin-bottom: 4px;
+  transition: opacity 0.2s;
+}
+
+/* disabled if user not logged in */
+.groupsHeaderDisabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* expanded panel */
+.groupsPanel {
+  margin-top: 6px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* add new group button */
+.groupsAddBtn {
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.groupsAddBtn:hover {
+  color: #0077ff;
+}
+
+/* input + creation UI */
+.groupsCreateBox {
+  margin-bottom: 10px;
+}
+
+.groupsInput {
+  width: 100%;
+  padding: 7px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 6px;
+}
+
+.groupsCreateButton {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-radius: 6px;
+  background: #0077ff;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+.groupsCreateButton:hover {
+  background: #005fcc;
+}
+
+/* list items */
+.groupItem {
+  padding: 5px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+.groupItem:last-child {
+  border-bottom: none;
+}
+.groupItem:hover {
+  background: #f3f3f3;
+}
+
+.groupItemActive {
+  font-weight: 600;
+  color: #0077ff;
+}
+/* ========== GROUP AREAS PANEL ========== */
+
+.groupAreasPopup {
+  position: absolute;
+  right: 300px;
+  top: 150px;
+  width: 260px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  z-index: 1200;
+}
+
+/* title */
+.groupAreasTitle {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* search input */
+.groupAreasInput {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* add button */
+.groupAreasAdd {
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.groupAreasAdd:hover {
+  color: #0077ff;
+}
+
+/* list items */
+.groupAreasItem {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+.groupAreasItem:last-child {
+  border-bottom: none;
+}
+.groupAreasItem:hover {
+  background: #f7f7f7;
+}
 
